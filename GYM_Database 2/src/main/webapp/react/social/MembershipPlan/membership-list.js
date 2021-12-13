@@ -22,8 +22,8 @@ const MembershipList = () => {
                 {
                     memberships.map(membership_plan =>
                                   <li className="list-group-item"
-                                      key={membership_plan.membership_id}>
-                                      <Link to={`/membership_plan/${membership_plan.membership_id}`}>
+                                      key={membership_plan.id}>
+                                      <Link to={`/membership_plan/${membership_plan.id}`}>
                                           {membership_plan.membership_type},
                                           {membership_plan.membership_description},
                                           {membership_plan.membership_cost}

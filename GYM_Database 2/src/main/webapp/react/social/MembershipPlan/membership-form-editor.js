@@ -14,7 +14,6 @@ const MembershipFormEditor = () => {
     const findMembershipById = (id) =>
         membershipService.findMembershipById(id)
             .then(user => setMembership(user))
-    console.log(user);
     const deleteMembership = (id) =>
         membershipService.deleteMembership(id)
             .then(() => history.goBack())
