@@ -13,7 +13,7 @@ public interface WorkoutRepository extends CrudRepository<Workout, Integer> {
     @Query(value = "SELECT * FROM workout",
             nativeQuery = true)
     public List<Workout> findAllWorkouts();
-    @Query(value = "SELECT * FROM workout WHERE workout_id=:Id",
+    @Query(value = "SELECT * FROM workout WHERE id=:Id",
             nativeQuery = true)
-    public Workout findWorkoutById(@Param("Id") Integer workout_id);
+    public Workout findWorkoutById(@Param("Id") Integer id);
 }

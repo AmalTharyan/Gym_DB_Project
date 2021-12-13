@@ -10,15 +10,15 @@ import javax.persistence.Table;
 public class Workout {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer workout_id;
+    private Integer id;
     private Integer plan_id;
     private Integer member_id;
     private String workout_description;
     private String workout_time;
     private Integer workout_timetaken;
 
-    public Integer getId() { return workout_id; }
-    public void setId(Integer workout_id) { this.workout_id = workout_id; }
+    public Integer getId() { return id; }
+    public void setId(Integer workout_id) { this.id = workout_id; }
 
     public Integer getPlan_id() { return plan_id;}
     public void setPlan_id(Integer plan_id){ this.plan_id = plan_id;}
@@ -37,7 +37,6 @@ public class Workout {
 
     public Workout(Integer plan_id, Integer member_id, String workout_description,
                    String workout_time, Integer workout_timetaken){
-        this.workout_id = workout_id;
         this.plan_id = plan_id;
         this.member_id = member_id;
         this.workout_description = workout_description;

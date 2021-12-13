@@ -70,7 +70,7 @@ const WorkoutFormEditor = () => {
             </button>
             <button className="btn btn-warning"
                     onClick={() => {
-                        history.back()}}>
+                        history.goBack()}}>
                 Cancel
             </button>
             <button className="btn btn-danger"

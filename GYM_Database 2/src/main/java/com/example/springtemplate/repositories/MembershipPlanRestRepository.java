@@ -15,7 +15,7 @@ public interface MembershipPlanRestRepository extends CrudRepository<domainMembe
     @Query(value = "SELECT * FROM membership_plan", nativeQuery = true)
     public List<domainMembershipPlan> findAllMembershipPlans();
 
-    @Query(value = "SELECT * FROM membership_plan WHERE membership_id=:Id", nativeQuery = true)
+    @Query(value = "SELECT * FROM membership_plan WHERE id=:Id", nativeQuery = true)
     public domainMembershipPlan findMembershipPlansById(@Param("Id") Integer id);
 
 }

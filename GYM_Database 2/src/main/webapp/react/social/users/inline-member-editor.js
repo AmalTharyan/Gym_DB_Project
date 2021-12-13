@@ -65,7 +65,7 @@ const InlineMemberEditor = ({member, deleteMember, updateMember}) => {
                     </div>
                     <div className="col-1">
                         <Link to={`/member/${memberCopy.id}/blogs`}>
-                            Blogs
+                            Members
                         </Link>
                     </div>
                     <div className="col-2">

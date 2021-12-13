@@ -1,6 +1,7 @@
 package com.example.springtemplate.daos;
 
 
+import com.example.springtemplate.models.Member;
 import com.example.springtemplate.models.domainMembershipPlan;
 import com.example.springtemplate.repositories.MembershipPlanRestRepository;
 
@@ -16,8 +17,8 @@ public class MembershipPlanRestOrmDao {
     @Autowired
     MembershipPlanRestRepository membershipPlanRepository;
 
-    @GetMapping("/api/membership_plan/create/{type}/{desc}/{cost}")
-    public domainMembershipPlan createMembershipId(
+    @PostMapping("/api/membership_plan/create/{type}/{desc}/{cost}")
+    public domainMembershipPlan createMembership(
         @PathVariable("type") String membership_type,
         @PathVariable("desc") String membership_description,
         @PathVariable("cost") Integer membership_cost){
@@ -31,19 +32,22 @@ public class MembershipPlanRestOrmDao {
         return membershipPlanRepository.findAllMembershipPlans();
     }
 
-    @GetMapping("/api/membership_plan/find/membership_id/{id}")
+    @GetMapping("/api/membership_plan/find/id/{Id}")
     public domainMembershipPlan findMembershipPlansById(
 
-            @PathVariable("id") Integer id) {
+            @PathVariable("Id") Integer id) {
         return membershipPlanRepository.findMembershipPlansById(id);
     }
 
-    @GetMapping("/api/membership_plan/update/{Id}/{cost}")
+    @PutMapping("/api/membership_plan/update/{Id}")
     public domainMembershipPlan updateMembership(
             @PathVariable("Id") Integer id,
-            @PathVariable("cost") Integer cost) {
+            @RequestBody domainMembershipPlan membershipUpdates) {
             domainMembershipPlan membershipPlan = membershipPlanRepository.findMembershipPlansById(id);
-            membershipPlan.setMembership_cost(cost);
+            membershipPlan.setId(membershipUpdates.getId());
+            membershipPlan.setMembership_type(membershipUpdates.getMembership_type());
+            membershipPlan.setMembership_description(membershipUpdates.getMembership_description());
+            membershipPlan.setMembership_cost(membershipUpdates.getMembership_cost());
         return membershipPlanRepository.save(membershipPlan);
     }
 

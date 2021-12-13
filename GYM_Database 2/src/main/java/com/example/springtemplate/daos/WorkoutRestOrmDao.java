@@ -1,6 +1,5 @@
 package com.example.springtemplate.daos;
 
-import com.example.springtemplate.models.Member;
 import com.example.springtemplate.models.Workout;
 import com.example.springtemplate.repositories.WorkoutRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,9 +28,9 @@ public class WorkoutRestOrmDao {
         return WorkoutRepository.findAllWorkouts();
     }
 
-    @GetMapping("/api/workout/find/id/{Id}")
+    @GetMapping("/api/workout/find/id/{id}")
     public Workout findWorkoutById(
-            @PathVariable("Id") Integer id) {
+            @PathVariable("id") Integer id) {
         return WorkoutRepository.findWorkoutById(id);
     }
 

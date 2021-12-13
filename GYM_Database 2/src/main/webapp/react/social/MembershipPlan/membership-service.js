@@ -19,10 +19,10 @@ export const deleteMembership = (id) =>
     })
 
 // TODO: create a new user
-export const createMembership = (membership) =>
+export const createMembership = (user) =>
     fetch(Membership_URL, {
-        method: 'GET',
-        body: JSON.stringify(membership),
+        method: 'POST',
+        body: JSON.stringify(user),
         headers: {'content-type': 'application/json'}
     })
         .then(response => response.json())
@@ -30,7 +30,7 @@ export const createMembership = (membership) =>
 
 // TODO: update a user by their ID
 export const updateMembership = (id, membership) =>
-    fetch(Membership_URL, {
+    fetch(`http://localhost:8090/api/membership_plan/update/${id}`, {
         method: 'PUT',
         body: JSON.stringify(membership),
         headers: {'content-type': 'application/json'}

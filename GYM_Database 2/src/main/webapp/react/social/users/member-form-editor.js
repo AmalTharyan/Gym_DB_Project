@@ -16,13 +16,13 @@ const MemberFormEditor = () => {
             .then(user => setUser(user))
     const deleteMember = (id) =>
         memberService.deleteMember(id)
-            .then(() => history.back())
+            .then(() => history.goBack())
     const createMember = (user) =>
         memberService.createMember(user)
             .then(() => history.goBack())
     const updateMember = (id, newUser) =>
         memberService.updateMember(id, newUser)
-            .then(() => history.back())
+            .then(() => history.goBack())
 
 
     return (
@@ -75,7 +75,7 @@ const MemberFormEditor = () => {
 
             <button className="btn btn-warning"
                 onClick={() => {
-                    history.back()}}>
+                    history.goBack()}}>
                 Cancel
             </button>
             <button className="btn btn-danger"

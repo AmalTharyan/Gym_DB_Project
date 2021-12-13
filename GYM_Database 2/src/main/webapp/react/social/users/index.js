@@ -1,7 +1,6 @@
 import MemberList from "./member-list";
 import MemberFormEditor from "./member-form-editor";
-import MembershipList from "../../university/MembershipPlan/membership-list";
-import MembershipFormEditor from "../../university/MembershipPlan/membership-form-editor";
+
 const {HashRouter, Route} = window.ReactRouterDOM; 
 const App = () => {
     return (

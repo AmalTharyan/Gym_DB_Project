@@ -20,18 +20,17 @@ public class domainMembershipPlan {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(columnDefinition = "VARBINARY(16)")
-    private Integer membership_id;
+    private Integer id;
     private String membership_type;
     private String membership_description;
     private Integer membership_cost;
 
     public Integer getId() {
-        return membership_id;
+        return id;
     }
 
     public void setId(Integer membership_id) {
-        this.membership_id = membership_id;
+        this.id = membership_id;
     }
 
     public String getMembership_type(){ return membership_type;}

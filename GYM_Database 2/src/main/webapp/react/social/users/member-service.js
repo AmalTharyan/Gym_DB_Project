@@ -22,11 +22,9 @@ export const deleteMember = (id) =>
 
 
 // TODO: create a new user
-export const createMember = (member) =>
-    fetch(`http://localhost:8090/api/member/create/${member.membership_id}/${member.firstName}/${member.lastName}/
-        ${member.username}/${member.password}/${member.email}/${member.dob}`, {method: "GET"
-    })
-        .then(response => response.json())
+export const createMember = (user) =>
+    fetch(`http://localhost:8090/api/member/create/${user.membership_id}/${user.firstName}/${user.lastName}
+    /${user.username}/${user.password}/${user.email}/${user.level}/${user.dob}`).then(response => response.json())
 
 
 // TODO: update a user by their ID

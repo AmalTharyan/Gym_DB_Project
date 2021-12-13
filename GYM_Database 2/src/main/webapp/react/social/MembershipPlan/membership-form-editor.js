@@ -45,10 +45,13 @@ const MembershipFormEditor = () => {
             <input
                 onChange={(e) =>
                     setMembership(user =>
-                        ({...user, membership_cost: e.target.value}))}
+                        ({...user, membership_description: e.target.value}))}
                 value={user.membership_description}/><br/>
             <label>Cost</label>
             <input
+                onChange={(e) =>
+                    setMembership(user =>
+                        ({...user, membership_cost: e.target.value}))}
                 value={user.membership_cost}/><br/>
             <button className="btn btn-primary"
                 onClick={() => createMembership(user)}>
@@ -60,7 +63,7 @@ const MembershipFormEditor = () => {
             </button>
             <button className="btn btn-warning"
                 onClick={() => {
-                    history.back()}}>
+                    history.goBack()}}>
                 Cancel
             </button>
             <button className="btn btn-danger"
