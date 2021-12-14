@@ -1,4 +1,6 @@
 # Gym_DB_Project
+Team Members: Amal Tharyan, Heye Zhou
+
 Problem Statement: We decided to create a gym database that would help members choose their membership plan and register their workouts. Our ORM implements the member as the user and membership_plan and workout as the domains. 
 
 Solution Statement: The solution was to create a web application that gives members the access to choose and change their membership plan whenever they want. They can also register their workouts under their id and using the workout ids to explicitly show the type of workouts done at the gym
