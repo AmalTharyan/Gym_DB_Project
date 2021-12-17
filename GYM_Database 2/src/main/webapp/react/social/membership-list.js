@@ -15,6 +15,9 @@ const MembershipList = () => {
         <div>
             <h2 class="fst-italic text-info" >List of Membership</h2>
 
+            <button onClick={() => history.push("/membership_plan/new")}>
+                Add Membership
+            </button>
             <ul className="list-group">
                 {
                     membership.map(membership_plan =>

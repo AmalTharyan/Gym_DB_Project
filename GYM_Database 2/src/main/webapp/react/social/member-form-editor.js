@@ -89,14 +89,13 @@ const MemberFormEditor = () => {
                                 ({...user, dob: e.target.value}))}
                 value={user.dob}/><br/>
 
-
             <button className="btn btn-success"
                     onClick={() => updateMember(user.id, user)}>
                 Update Info and Save
             </button>
             <button className="btn btn-primary"
                     onClick={() => createMember(user)}>
-                Update Info and Create
+                Create
             </button>
             <Link to={`/workout/?id= ${user.id}`}>
                 Go to Workout List Page with Member Id = {user.id}

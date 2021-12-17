@@ -1,26 +1,21 @@
 package com.example.springtemplate.daos;
 
 import com.example.springtemplate.models.Workout;
+import com.example.springtemplate.models.domainMembershipPlan;
 import com.example.springtemplate.repositories.WorkoutRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:63342")
 public class WorkoutRestOrmDao {
     @Autowired
     WorkoutRepository WorkoutRepository;
 
-    @GetMapping("/api/workout/create/{plan}/{member}/{desc}/{time}/{timetaken}")
-    public Workout createWorkout(
-            @PathVariable("plan") Integer plan_id,
-            @PathVariable("member") Integer member_id,
-            @PathVariable("desc") String workout_description,
-            @PathVariable("time") String workout_time,
-            @PathVariable("timeaken") Integer workout_timetaken){
-            Workout workout = new Workout(plan_id, member_id, workout_description, workout_time, workout_timetaken);
-            return WorkoutRepository.save(workout);
+    @PostMapping("/api/workout")
+    public Workout createWorkout(@RequestBody Workout workout) {
+        return WorkoutRepository.save(workout);
     }
 
     @GetMapping("/api/workout/find")

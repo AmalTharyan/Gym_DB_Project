@@ -84,7 +84,7 @@ const WorkoutFormEditor = () => {
             </button>
             <button className="btn btn-primary"
                     onClick={() => createWorkout(user)}>
-                Update Info and Create
+                Create
             </button>
 
 

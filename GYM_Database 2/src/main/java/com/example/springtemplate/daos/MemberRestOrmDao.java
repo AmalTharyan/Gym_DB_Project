@@ -9,23 +9,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:63342")
 public class MemberRestOrmDao {
   @Autowired
   MemberRestRepository MemberRepository;
 
-  @GetMapping("/api/member/create/{membership}/{fn}/{ln}/{un}/{pw}/{email}/{lvl}/{dob}")
-  public Member createMember(
-
-          @PathVariable("membership") Integer membership_id,
-          @PathVariable("fn") String first,
-          @PathVariable("ln") String last,
-          @PathVariable("un") String uname,
-          @PathVariable("pw") String pass,
-          @PathVariable("email") String email,
-          @PathVariable("lvl") String level,
-          @PathVariable("dob") String dob) {
-    Member member = new Member(membership_id, uname, pass, first, last, email, level, dob);
+  @PostMapping("/api/member")
+  public Member createMember(@RequestBody Member member) {
     return MemberRepository.save(member);
   }
 

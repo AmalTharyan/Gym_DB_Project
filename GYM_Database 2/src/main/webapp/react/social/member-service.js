@@ -23,8 +23,12 @@ export const deleteMember = (id) =>
 
 // TODO: create a new user
 export const createMember = (member) =>
-    fetch(`http://localhost:8090/api/member/create/${member.membership_id}/${member.firstName}/${member.lastName}
-    /${member.username}/${member.password}/${member.email}/${member.level}/${member.dob}`).then(response => response.json())
+    fetch('http://localhost:8090/api/member', {
+        method: 'POST',
+        body: JSON.stringify(member),
+        headers: {'content-type': 'application/json'}
+    })
+        .then(response => response.json())
 
 
 // TODO: update a user by their ID

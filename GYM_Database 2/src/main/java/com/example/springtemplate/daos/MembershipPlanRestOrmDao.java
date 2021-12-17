@@ -11,19 +11,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:63342")
 public class MembershipPlanRestOrmDao {
     @Autowired
     MembershipPlanRestRepository membershipPlanRepository;
 
-    @PostMapping("/api/membership_plan/create/{type}/{desc}/{cost}")
-    public domainMembershipPlan createMembership(
-        @PathVariable("type") String membership_type,
-        @PathVariable("desc") String membership_description,
-        @PathVariable("cost") Integer membership_cost){
-        domainMembershipPlan membership = new domainMembershipPlan(membership_type, membership_description, membership_cost);
-        return membershipPlanRepository.save(membership);
+    @PostMapping("/api/membership_plan")
+    public domainMembershipPlan createMembership(@RequestBody domainMembershipPlan membershipPlan) {
+        return membershipPlanRepository.save(membershipPlan);
     }
+
+
 
     @GetMapping("/api/membership_plan/find")
     public List<domainMembershipPlan> findAllMembershipPlans() {

@@ -18,6 +18,9 @@ const MemberList = () => {
         <div>
             <h1 className="text-center text-primary"> Welcome to NEU GYM!!! </h1>
             <h2 className="fst-italic text-info">List of Member</h2>
+            <button onClick={() => history.push("/member/new")}>
+                Add Member
+            </button>
             <ul className="list-group">
                 {
                     member.map(member =>

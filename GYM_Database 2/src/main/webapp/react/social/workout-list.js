@@ -14,6 +14,10 @@ const WorkoutList = () => {
     return (
         <div>
             <h2 class="fst-italic text-info">List of Workout</h2>
+
+            <button onClick={() => history.push("/workout/new")}>
+                Add Workout
+            </button>
             <ul className="list-group">
                 {
                     workout.map(workout =>

@@ -23,16 +23,13 @@ export const deleteMembership = (id) =>
     })
 
 // TODO: create a new user
-export const createMembership = (membership_plan) =>
-    fetch(`http://localhost:8090/api/membership_plan/create/${membership_plan.membership_type}/${membership_plan.membership_description}/${membership_plan.membership_cost}
-    `,{
+export const createMembership = (membership) =>
+    fetch('http://localhost:8090/api/membership_plan', {
         method: 'POST',
-        body: JSON.stringify(membership_plan),
-        // headers: {
-        //     "Access-Control-Allow-Origin": "*",
-        //     'content-type': 'application/json'
-        // }//"mode" : "no-cors",
-    }).then(response => response.json())
+        body: JSON.stringify(membership),
+        headers: {'content-type': 'application/json'}
+    })
+        .then(response => response.json())
 
 
 

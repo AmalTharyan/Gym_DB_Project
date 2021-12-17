@@ -21,15 +21,12 @@ export const deleteWorkout = (id) =>
 
 // TODO: create a new user
 export const createWorkout = (workout) =>
-    fetch(`http://localhost:8090/api/workout/create/${workout.plan_id}/${workout.member_id}/${workout.workout_description}/${workout.workout_time}/${workout.workout_timetaken}`,
-          {
-              method: 'POST',
-              body: JSON.stringify(workout),
-              headers: {
-                  // "Access-Control-Allow-Origin": "*",
-                  'content-type': 'application/json'
-              }//,"mode" : "no-cors",
-          }).then(response => response.json())
+    fetch('http://localhost:8090/api/workout', {
+        method: 'POST',
+        body: JSON.stringify(workout),
+        headers: {'content-type': 'application/json'}
+    })
+        .then(response => response.json())
 
 
 // TODO: update a user by their ID

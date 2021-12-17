@@ -72,7 +72,7 @@ const MembershipFormEditor = () => {
 
             <button className="btn btn-primary"
                 onClick={() => createMembership(user)}>
-                Update Info and Create
+                Create
             </button>
             {/*<button className="btn btn-info"*/}
             {/*        onClick={() => findMemberByMembershipId(user.id)}>*/}
