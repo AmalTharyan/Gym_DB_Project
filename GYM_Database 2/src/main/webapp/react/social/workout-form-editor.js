@@ -50,6 +50,9 @@ const WorkoutFormEditor = () => {
                     setWorkout(user =>
                                    ({...user, plan_id: e.target.value}))}
                 value={user.plan_id}/><br/>
+            <Link to={`/workout_plan/${user.plan_id}`}>
+                Go to User Edit Page With Workout Plan Id ={user.plan_id}
+            </Link><br/>
             <label>Workout Member Id(Immutable)</label>
             <input
                 onChange={(e) =>
